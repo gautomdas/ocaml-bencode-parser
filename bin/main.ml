@@ -27,6 +27,18 @@ let get_byte () =
     Byte (String.sub file (!counter - 1) 1))
 ;;
 
+let rec encode encoding_buffer str = 
+  match encoding_buffer with
+  | Integer a -> string_of_int a
+  | String a -> (string_of_int (String.length a))^":"^a
+  | List a -> (match a with
+    | [] -> str^"e"
+    | hd::tl -> str^(encode hd "")^(encode (List tl) ""))
+  | Dict a -> (match a with
+      | [] -> str^"e"
+      | hd::tl -> let (str_hd, second_tail) = hd in str^(encode (String str_hd) "")^(encode second_tail "")^(encode (Dict tl) ""));;
+
+
 let rec parser buffer =
   let concat = List.fold_left (fun a x -> a ^ x) "" in
   let get_buffer byte =
