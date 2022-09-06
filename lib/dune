@@ -1,2 +1,3 @@
 (library
- (name bencode))
+ (public_name bencode)
+ (libraries sha))

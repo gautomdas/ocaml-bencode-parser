@@ -1,4 +1,4 @@
 (executable
  (public_name bencode)
- (name main)
+ (name bencode_demo)
  (libraries bencode))
