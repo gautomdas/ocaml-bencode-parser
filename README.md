@@ -1,5 +1,8 @@
 # ocaml-bencode-parser
-`./bin/bencode_demo` shows an example of how to use the bencode library.
+
+An example of how to encode a beautiful idea —or rather formalism— in a robust way.
+
+To look at the source code, please head over to `./lib/bencode.ml` and `./bin/bencode_demo` shows an example of how to use the bencode library.
 
 To run:
 
